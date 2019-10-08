@@ -52,76 +52,45 @@ vector<vector<int>> spiralMatrix(int R, int C, int r0, int c0){
 	int x = c0, y = r0, length = 1, c = 0, max = R*C;
 	if(DEBUG)cout<<"START x: "<<x<<" y: "<<y<<" c: "<<c<<" max: "<<max<<endl;
 	while(c < max){
-		//RIGHT
-		for(int i = 0; i < length; i++){
-			if(DEBUG)cout<<"x: "<<x<<" y: "<<y<<" c: "<<c<<endl;
-			try{
-				if(DEBUG)
-					cout<<matrix.at(y).at(x)<<endl;
-				else
-					matrix.at(y).at(x);
-				vec.push_back(position(x, y));
-				++c;
-			} catch (const out_of_range oor){
-				if(DEBUG) cout<<"out of range"<<endl;	
+		for(int j = 0; j < 4; j++){
+			for(int i = 0; i < length; i++){
+				if(DEBUG)cout<<"x: "<<x<<" y: "<<y<<" j: "<<j<<" c: "<<c<<endl;
+				try{
+					if(DEBUG)
+						cout<<matrix.at(y).at(x)<<endl;
+					else
+						matrix.at(y).at(x);
+					vec.push_back(position(x, y));
+					++c;
+				} catch (const out_of_range oor){
+					if(DEBUG) cout<<"out of range"<<endl;	
+				}
+				switch(j){
+					case 0 :
+						++x;
+						break;
+					case 1 :
+						++y;
+						break;
+					case 2 :
+						--x;
+						break;
+					case 3 :
+						--y;
+						break;
+					default:
+						cout<<"Invalid input case"<<endl;
+				}
 			}
-			++x;
+			if(j % 2 == 1)
+				++length;
 		}
-		//DOWN
-		for(int i = 0; i < length; i++){
-			if(DEBUG)cout<<"x: "<<x<<" y: "<<y<<" c: "<<c<<endl;
-			try{
-				if(DEBUG)
-					cout<<matrix.at(y).at(x)<<endl;
-				else
-					matrix.at(y).at(x);
-				vec.push_back(position(x, y));
-				++c;
-			} catch (const out_of_range oor){
-				if(DEBUG) cout<<"out of range"<<endl;	
-			}
-			++y;
-		}
-		//Increment length
-		++length;
-		//LEFT
-		for(int i = 0; i < length; i++){
-			if(DEBUG)cout<<"x: "<<x<<" y: "<<y<<" c: "<<c<<endl;
-			try{
-				if(DEBUG)
-					cout<<matrix.at(y).at(x)<<endl;
-				else
-					matrix.at(y).at(x);
-				vec.push_back(position(x, y));
-				++c;
-			} catch (const out_of_range oor){
-				if(DEBUG) cout<<"out of range"<<endl;	
-			}
-			--x;
-		}
-		//DOWN
-		for(int i = 0; i < length; i++){
-			if(DEBUG)cout<<"x: "<<x<<" y: "<<y<<" c: "<<c<<endl;
-			try{
-				if(DEBUG)
-					cout<<matrix.at(y).at(x)<<endl;
-				else
-					matrix.at(y).at(x);
-				vec.push_back(position(x, y));
-				++c;
-			} catch (const out_of_range oor){
-				if(DEBUG) cout<<"out of range"<<endl;	
-			}
-			--y;
-		}
-		//Increment length
-		++length;
 	}
 	return vec;
 }
 
 void testSpiralMatrix(){
-	vector<vector<int>> output = spiralMatrix(1, 4, 0, 0);
+	vector<vector<int>> output = spiralMatrix(5, 6, 1, 4);
 	print(output);
 	output.clear();
 }
