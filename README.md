@@ -10,3 +10,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Spiral Matrix|54|
 |Spiral Matrix II|59|
 |Spiral Matrix III|885|
+|Merge Two Sorted Lists|21|
