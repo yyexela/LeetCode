@@ -29,28 +29,19 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2){
 	int overflow = 0;
 	while(l1 != NULL || l2 != NULL){
 		if(DEBUG) print(head);
-		if(l1 == NULL){
-			if(DEBUG) cout<<"l1 is NULL"<<endl;
-			ListNode* tmp = new ListNode((overflow + l2->val)%10);
-			overflow = (overflow + l2->val)/10;
-			curr->next = tmp;
-			curr = tmp;
-			l2 = l2->next;
-		} else if (l2 == NULL){
-			if(DEBUG) cout<<"l2 is NULL"<<endl;
-			ListNode* tmp = new ListNode((overflow + l1->val)%10);
-			overflow = (overflow + l1->val)/10;
-			curr->next = tmp;
-			curr = tmp;
+		int val1 = 0, val2 = 0;//val1 is what to add from l1 and val2 is what to add from l2
+		if(l1 != NULL){
+			val1 = l1->val;
 			l1 = l1->next;
-		} else {
-			ListNode* tmp = new ListNode((overflow + l2->val + l1->val)%10);
-			overflow = (l1->val + l2->val + overflow)/10;
-			curr->next = tmp;
-			curr = tmp;
-			l1 = l1->next;
+		}
+		if(l2 != NULL){
+			val2 = l2->val;
 			l2 = l2->next;
 		}
+		ListNode* tmp = new ListNode((overflow + val1 + val2)%10);
+		overflow = (val1 + val2 + overflow)/10;
+		curr->next = tmp;
+		curr = tmp;
 		if(DEBUG){
 			cout<<"overflow: "<<overflow<<endl;
 			print(head);
@@ -58,7 +49,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2){
 		}
 		if(DEBUG) print(head);
 	}
-	f(overflow != 0){
+	if(overflow != 0){
 		ListNode* tmp = new ListNode(overflow);
 		curr->next = tmp;
 	}
