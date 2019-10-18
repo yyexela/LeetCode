@@ -13,3 +13,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Merge Two Sorted Lists|21|
 |Two Sum|1|
 |Add Two Numbers|2|
+|Valid Square|593|
