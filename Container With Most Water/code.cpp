@@ -18,14 +18,18 @@ void print(vector<int>& vec){
 
 int maxArea(vector<int>& vec){
     int max = 0;
+    int minOfH = 0;
     for(int i = 0; i < vec.size(); ++i){
-        for(int j = 0; j < vec.size(); ++j){
-            //find min height
-            int min = vec.at(i);
-            if(vec.at(j) < vec.at(i))
-                min = vec.at(j);
-            if(abs((i-j)*min )>max)
-                max = abs((i-j)*min);
+        for(int j = vec.size()-1; j >= 0; --j){
+            if(!(vec.at(i) < minOfH || vec.at(j) < minOfH)){
+                int min = vec.at(i);
+                if(vec.at(j) < vec.at(i))
+                    min = vec.at(j);
+                if(abs((i-j)*min )>max){
+                    max = abs((i-j)*min);
+                    minOfH = min;
+                }
+            }
         }
     }
     return max;
