@@ -14,3 +14,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Two Sum|1|
 |Add Two Numbers|2|
 |Valid Square|593|
+|Pascal's Triangle|118|
