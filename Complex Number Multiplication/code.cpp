@@ -16,7 +16,7 @@ int getNum1(string a){
     for(int i = index; i < a.size(); ++i){
         if(DEBUG) cout<<"i: "<<i<<endl;
         if(a.substr(i,1) == "+" || a.substr(i,1) == "-"){
-            if(DEBUG) cout<<"a.substr:"<<a.substr(i,1)<<" index:"<<index<<endl;
+            if(DEBUG) cout<<"a.substr:"<<a.substr(index,i)<<" index:"<<index<<endl;
             int num = stoi(a.substr(index, i));
             if(index == 1)
                 return (-1* num);
@@ -32,8 +32,8 @@ int getNum2(string a){
     for(int i = a.size()-1; i > 0; --i){
         if(DEBUG) cout<<"i: "<<i<<endl;
         if(a.substr(i,1) == "+" || a.substr(i,1) == "-"){
-            if(DEBUG) cout<<"a.substr:"<<a.substr(i+1,a.size()-2)<<" a.size:"<<a.size()<<endl;
-            int num = stoi(a.substr(i+1,a.size()-1));
+            if(DEBUG) cout<<"a.substr:"<<a.substr(i+1,a.size()-i-2)<<" a.size:"<<a.size()<<endl;
+            int num = stoi(a.substr(i+1,a.size()-i-2));
             if(a.substr(i,1) == "-")
                 return (-1* num);
             else
@@ -57,8 +57,8 @@ string complexNumberMultiply(string a, string b){
 }
     
 int main(){
-    string str1 = "1-1i";
-    string str2 = "1-1i";
+    string str1 = "9-1i";
+    string str2 = "9-1i";
 
     cout<<complexNumberMultiply(str1, str2)<<endl;
 }
