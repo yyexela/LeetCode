@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 
 using namespace std;
 
@@ -28,18 +29,24 @@ class Solution {
 public:
     bool isValidBST(TreeNode* root) {
         if(root == NULL) return true;
-        
-        if(root->right != NULL){
-            if(root->right->val <= root->val) return false;
-            if(!isValidBST(root->right)) return false;
+        vector<int> vec;
+        buildInOrder(root, vec);
+        for(vector<int>::iterator i = vec.begin(); i < vec.end(); ++i){
+            //cout<<"i: "<<*i<<endl;
+            if(i != vec.begin() && (*i) <= *(i-1)){
+                //cout<<"i: "<<*i<<" i-1:"<<*(i-1)<<endl;
+                return false;
+            }
         }
-                
-        if(root->left != NULL){
-            if(root->left->val >= root->val) return false;
-            if(!isValidBST(root->left)) return false;
-        }
-        
         return true;
+    }
+
+    void buildInOrder(TreeNode* root, vector<int>& vec){
+        if(root->left != NULL)
+            buildInOrder(root->left, vec);
+        vec.push_back(root->val);
+        if(root->right != NULL)
+            buildInOrder(root->right, vec);
     }
 };
 
