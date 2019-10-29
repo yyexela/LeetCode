@@ -30,25 +30,28 @@ class Solution {
 public:
     bool isBalanced(TreeNode* root) {
         if(root == NULL) return true;
+        return compareHeights(root);
+    }
+    bool compareHeights(TreeNode* root){
+        if( abs(getHeight(root->left) - getHeight(root->right)) > 1) return false;
+        if(root->left != NULL) if(!compareHeights(root->left)) return false;
+        if(root->right != NULL) if(!compareHeights(root->right)) return false;
+        return true;
+    }
+    int getHeight(TreeNode* root){
+        int height = 0;
+        if(root == NULL) return height;
         vector<TreeNode*> stack;
-        int count = 0, height = -1;
         stack.push_back(root);
-        
         while(stack.size() != 0){
             for(int i = 0; i < stack.size(); ++i){
                 if(stack.at(0)->left != NULL) stack.push_back(stack.at(0)->left);
                 if(stack.at(0)->right != NULL) stack.push_back(stack.at(0)->right);
                 stack.erase(stack.begin());
-                ++count;
             }
             ++height;
         }
-
-        cout<<"count: "<<count<<endl;
-        cout<<"height: "<<height<<endl;
-
-        if(count < pow(2,height)) return false;
-        return true;
+        return height;
     }
 };
 
@@ -63,22 +66,6 @@ int main(){
     printBST(root);
     cout<<endl;
     Solution sol;
-    if(sol.isBalanced(root))
-        cout<<"True"<<endl;
-    else
-        cout<<"False"<<endl;
-    cout<<endl;
-
-    //unbalanced tree, should return false;
-    root = new TreeNode(10);
-    root->left = new TreeNode(5);
-    root->right = new TreeNode(15);
-    root->right->right = new TreeNode(20);
-    root->right->left = new TreeNode(12);
-    root->right->left->right = new TreeNode(13);
-    root->right->left->left = new TreeNode(11);
-    cout<<"Tree:"<<endl;
-    printBST(root);
     if(sol.isBalanced(root))
         cout<<"True"<<endl;
     else
