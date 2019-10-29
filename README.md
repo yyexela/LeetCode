@@ -18,3 +18,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Complex Number Multiplication|537|
 |Container with Most Water|11|
 |Remove Duplicates from Sorted Array|26|
+|Validate Binary Search Tree|98|
