@@ -20,3 +20,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Remove Duplicates from Sorted Array|26|
 |Validate Binary Search Tree|98|
 |Balanced Binary Tree|110|
+|Invert Binary Tree|226|
