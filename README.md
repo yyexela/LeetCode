@@ -21,3 +21,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Validate Binary Search Tree|98|
 |Balanced Binary Tree|110|
 |Invert Binary Tree|226|
+|Average of Levels in Binary Tree|637|
