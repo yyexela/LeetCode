@@ -22,3 +22,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Balanced Binary Tree|110|
 |Invert Binary Tree|226|
 |Average of Levels in Binary Tree|637|
+|Second Minimum Node In a Binary Tree|671|
