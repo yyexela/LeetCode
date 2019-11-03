@@ -24,3 +24,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Average of Levels in Binary Tree|637|X|
 |Second Minimum Node In a Binary Tree|671|X|
 |Longest Substring with At Least K Repeating Characters|395||
+|Valid Tic-Tac-Toe State|794||
