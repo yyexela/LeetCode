@@ -25,3 +25,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Second Minimum Node In a Binary Tree|671|X|
 |Longest Substring with At Least K Repeating Characters|395||
 |Valid Tic-Tac-Toe State|794|X|
+|N-th Tribonacci Number|1137||
