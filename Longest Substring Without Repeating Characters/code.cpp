@@ -11,20 +11,29 @@ public:
         unordered_map<char, int> map;
         int max = 0;
         int count = 0;
-        for(int i = 0; i < s.size(); ++i){
-            if(DEBUG) cout<<"Adding: "<<s[i]<<endl;
-            auto search = map.find(s[i]);
-            if(search != map.end()){
-                // size: i - index
-                if(DEBUG) cout<<"Found "<<s[i]<<" twice"<<endl;
-                if(max < count) max = count;
-                count = 0;
-                map.clear();
+
+        while(s.size() > max){
+            for(int i = 0; i < s.size(); ++i){
+                if(DEBUG) cout<<"Adding: "<<s[i]<<endl;
+                auto search = map.find(s[i]);
+                if(search != map.end()){
+                    // size: i - index
+                    if(DEBUG) cout<<"Found "<<s[i]<<" twice"<<endl;
+                    if(max < count) max = count;
+                    count = 0;
+                    map.clear();
+                }
+                map.insert({s[i],i});
+                ++count;
             }
-            map.insert({s[i],i});
-            ++count;
+            if(max < count) max = count;
+            if(DEBUG) cout<<"Stepping string"<<endl;
+            //reset
+            map.clear();
+            count = 0;
+            s = s.substr(1);
+            if(DEBUG) cout<<"New str: "<<s<<endl;
         }
-        if(max < count) max = count;
         return max;
     }
 };
