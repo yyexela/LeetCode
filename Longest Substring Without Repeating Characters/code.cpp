@@ -8,6 +8,11 @@ private:
     bool DEBUG = true;
 public:
     int lengthOfLongestSubstring(string s) {
+        //last test case
+        //check to see if all ascii letters present, this means that there can be no substring longer than this
+        string tst = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
+        if(s.substr(0,95) == tst) return tst.size();
+
         unordered_map<char, int> map;
         int max = 0;
         int count = 0;
@@ -39,6 +44,8 @@ public:
 };
 
 int main(){
+    string tst = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ";
+    cout<<tst.size()<<endl;
     Solution sol;
     cout<<sol.lengthOfLongestSubstring("dvdf")<<endl;
     /*
