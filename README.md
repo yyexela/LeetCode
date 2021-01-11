@@ -27,3 +27,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Valid Tic-Tac-Toe State|794|X|
 |N-th Tribonacci Number|1137|X|
 |Longest Substring Without Repeating Characters|3|X|
+|Reverse Integer|4|X|
