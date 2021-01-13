@@ -28,3 +28,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |N-th Tribonacci Number|1137|X|
 |Longest Substring Without Repeating Characters|3|X|
 |Reverse Integer|4|X|
+|String to Integer|8|X|
