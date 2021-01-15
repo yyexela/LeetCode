@@ -30,3 +30,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Reverse Integer|4|X|
 |String to Integer|8|X|
 |Median of Two Sorted Arrays|4|X|
+|Longest Palindromic Substring|5|X|
