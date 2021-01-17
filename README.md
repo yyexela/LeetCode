@@ -33,3 +33,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Longest Palindromic Substring|5|X|
 |ZigZag Conversion|6|X|
 |Palindrome Number|9|X|
+|Integer to Roman|12|X|
