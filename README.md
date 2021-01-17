@@ -32,3 +32,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Median of Two Sorted Arrays|4|X|
 |Longest Palindromic Substring|5|X|
 |ZigZag Conversion|6|X|
+|Palindrome Number|9|X|
