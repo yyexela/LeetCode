@@ -23,7 +23,7 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Invert Binary Tree|226|X|
 |Average of Levels in Binary Tree|637|X|
 |Second Minimum Node In a Binary Tree|671|X|
-|Longest Substring with At Least K Repeating Characters|395||
+|Longest Substring with At Least K Repeating Characters|395|X|
 |Valid Tic-Tac-Toe State|794|X|
 |N-th Tribonacci Number|1137|X|
 |Longest Substring Without Repeating Characters|3|X|
@@ -34,3 +34,4 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |ZigZag Conversion|6|X|
 |Palindrome Number|9|X|
 |Integer to Roman|12|X|
+|Continuous Subarray String|523|X|
