@@ -35,3 +35,5 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Palindrome Number|9|X|
 |Integer to Roman|12|X|
 |Continuous Subarray String|523|X|
+|Find the N-th Value After K Seconds|3179|X|
+|Check if the Rectangle Corner Is Reachable|3235|X|
