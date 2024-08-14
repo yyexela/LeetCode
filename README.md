@@ -37,3 +37,8 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Continuous Subarray String|523|X|
 |Find the N-th Value After K Seconds|3179|X|
 |Check if the Rectangle Corner Is Reachable|3235|X|
+|Score of a String|3110|X|
+|Harshad Number|3099|X|
+|Valid Word|3136|X||
+|Find Missing and Repeated Values|2965|X|
+|Distribute Candies Among Children I|2928|X|
