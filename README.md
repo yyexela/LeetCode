@@ -42,3 +42,5 @@ A repository of Leetcode practice that I have completed, sorted in directories b
 |Valid Word|3136|X||
 |Find Missing and Repeated Values|2965|X|
 |Distribute Candies Among Children I|2928|X|
+|Separate White and Black Balls|2938|X|
+|Shortest and Lexicographically Smallest Beautiful String|2904|X|
